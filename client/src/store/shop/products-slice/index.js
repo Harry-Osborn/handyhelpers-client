@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+VITE_API_BASE_URL = "https://handyhelpers-server.onrender.com/api";
+
 const initialState = {
   isLoading: false,
   productList: [],
@@ -18,7 +20,7 @@ export const fetchAllFilteredProducts = createAsyncThunk(
     });
 
     const result = await axios.get(
-      `http://localhost:5000/api/shop/products/get?${query}`
+      `${VITE_API_BASE_URL}/shop/products/get?${query}`
     );
 
     console.log(result);
@@ -31,7 +33,7 @@ export const fetchProductDetails = createAsyncThunk(
   "/products/fetchProductDetails",
   async (id) => {
     const result = await axios.get(
-      `http://localhost:5000/api/shop/products/get/${id}`
+      `${VITE_API_BASE_URL}/shop/products/get/${id}`
     );
 
     return result?.data;

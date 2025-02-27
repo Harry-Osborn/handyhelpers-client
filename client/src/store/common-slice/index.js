@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+VITE_API_BASE_URL = "https://handyhelpers-server.onrender.com/api";
+
 const initialState = {
   isLoading: false,
   featureImageList: [],
@@ -9,9 +11,7 @@ const initialState = {
 export const getFeatureImages = createAsyncThunk(
   "/order/getFeatureImages",
   async () => {
-    const response = await axios.get(
-      `http://localhost:5000/api/common/feature/get`
-    );
+    const response = await axios.get(`${VITE_API_BASE_URL}/common/feature/get`);
 
     return response.data;
   }
@@ -21,7 +21,7 @@ export const addFeatureImage = createAsyncThunk(
   "/order/addFeatureImage",
   async (image) => {
     const response = await axios.post(
-      `http://localhost:5000/api/common/feature/add`,
+      `${VITE_API_BASE_URL}/common/feature/add`,
       { image }
     );
 
