@@ -6,7 +6,7 @@ const initialState = {
   orderDetails: null,
 };
 
-VITE_API_BASE_URL = "https://handyhelpers-server.onrender.com/api";
+const VITE_API_BASE_URL = "https://handyhelpers-server.onrender.com/api";
 
 export const getAllOrdersForAdmin = createAsyncThunk(
   "/order/getAllOrdersForAdmin",

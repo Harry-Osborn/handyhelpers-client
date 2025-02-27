@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-VITE_API_BASE_URL = "https://handyhelpers-server.onrender.com/api";
+const VITE_API_BASE_URL = "https://handyhelpers-server.onrender.com/api";
 
 const initialState = {
   isLoading: false,
